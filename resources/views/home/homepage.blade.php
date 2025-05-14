@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReAir</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+    header .logo {
+      font-size: 24px;
+      color: #00aaff;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x400/?sky,clouds') no-repeat center center;
+      background-size: cover;
+      color: #000;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .content {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 18px;
+    }
+    .footer {
+      background-color: #111;
+      color: #ccc;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px;
+      font-size: 14px;
+    }
+    .footer div {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-top: 8px;
+    }
+    .footer .download img {
+      height: 40px;
+      margin-top: 10px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      color: black;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🌍 ReAir</div>
+    <nav>
+      <a href="{{route('homepage')}}">Home</a>
+      <a href="{{route('about_us')}}">About</a>
+      <a href="{{route('contact_us')}}">Contact</a>
+    </nav>
+    <div class="dropdown">
+      <a href="#" style="color: white;">Sign in</a>
+      <div class="dropdown-content">
+        <a href="{{route('login')}}">Login</a>
+        <a href="{{route('register')}}">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1><strong>Transforming Carbon monoxide into cleaner Air</strong></h1>
+  </section>
+
+  <section class="content">
+    <p>
+      Innovative technology to convert harmful carbon monoxide<br>
+      into safer carbon dioxide<br>
+      improving air quality for healthier future
+    </p>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <h4>Exclusive</h4>
+      <p>Subscribe</p>
+      <input type="email" placeholder="Enter your email" />
+    </div>
+    <div>
+      <h4>Support</h4>
+      <p>reair@gmail.com</p>
+      <p>+260 790783634</p>
+    </div>
+    <div>
+      <h4>Account</h4>
+      <a href="#">My Account</a>
+      <a href="#">Login / Register</a>
+    </div>
+    <div>
+      <h4>Quick Link</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms Of Use</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="download">
+      <h4>Download App</h4>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+    </div>
+  </footer>
+
+  <div style="text-align:center; background:#000; color:#999; padding:10px;">
+    © Copyright ReAir 2022. All rights reserved
+  </div>
+
+</body>
+</html>
