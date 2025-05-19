@@ -226,7 +226,13 @@
                 <td>
                   <span class="icon">👁</span>
                   <a href="{{route('user.edit', ['user'=> $user])}}"><span class="icon">✏️</span></a>
-                  <span class="icon">🗑️</span>
+                  <span class="icon">
+                    <form method="post", action="{{route('user.destroy',['user' => $user])}}">
+                      @csrf
+                      @method('delete')
+                      <input type='submit' style="border: none; background: none; padding: 0;" value='🗑️'>
+                    </form>
+                  </span>
                 </td>
               </tr>
               @endforeach

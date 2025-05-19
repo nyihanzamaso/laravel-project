@@ -16,6 +16,7 @@ route::get('/userlist', [AdminController::class, 'userlist'])->name('userlist');
 route::get('/devices', [AdminController::class, 'device'])->name('devices');
 route::get('/userlist/{user}/edit', [AdminController::class, 'edit'])->name('user.edit');
 route::put('/userlist/{user}/update', [AdminController::class, 'update'])->name('user.update');
+route::delete('/userlist/{user}/destroy', [AdminController::class, 'destroy'])->name('user.destroy');
 
 
 route::get('/post', [PostContoller::class, 'index']);

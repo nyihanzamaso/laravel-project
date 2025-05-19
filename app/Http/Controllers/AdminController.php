@@ -45,4 +45,9 @@ class AdminController extends Controller
 
         return redirect(route('userlist'));
     }
+
+    public function destroy(User $user){
+        $user -> delete();
+        return redirect(route('userlist'));
+    }
 }

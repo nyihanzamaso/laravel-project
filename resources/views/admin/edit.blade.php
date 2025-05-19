@@ -9,9 +9,9 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{route('user.update')}}">
+        <form method="POST" action="{{route('user.update', ['user' => $user])}}">
             @csrf
-
+            @method('put')
             <div>
                 <x-label for="name" value="{{ __('Name') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{$user->name}}" required autofocus autocomplete="name" />
