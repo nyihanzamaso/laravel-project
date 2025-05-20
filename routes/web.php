@@ -17,7 +17,8 @@ route::get('/devices', [AdminController::class, 'device'])->name('devices');
 route::get('/userlist/{user}/edit', [AdminController::class, 'edit'])->name('user.edit');
 route::put('/userlist/{user}/update', [AdminController::class, 'update'])->name('user.update');
 route::delete('/userlist/{user}/destroy', [AdminController::class, 'destroy'])->name('user.destroy');
-
+route::get('/add_user', [AdminController::class, 'add_user'])->name('add_user');
+route::post('/add_user/create', [AdminController::class, 'create'])->name('add_user/create');
 
 route::get('/post', [PostContoller::class, 'index']);
 route::post('/create', [PostContoller::class, 'create'])->name('create');

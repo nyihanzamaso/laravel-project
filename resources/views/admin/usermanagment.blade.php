@@ -197,7 +197,7 @@
           <input type="text" placeholder="Search user" />
           <div class="controls">
             <button class="filter">Filter</button>
-            <button class="add-user">Add New User</button>
+            <a href="{{route('add_user')}}">Add New User</a>
           </div>
         </div>
 

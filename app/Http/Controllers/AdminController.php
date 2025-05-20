@@ -50,4 +50,18 @@ class AdminController extends Controller
         $user -> delete();
         return redirect(route('userlist'));
     }
+    public function add_user(){
+        return view('admin.add_user');
+    }
+    public function create(Request $request){
+                $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'password' => 'required',
+        ]);
+        $user = User::create($data);
+
+        return redirect(route('userlist'));
+    }
 }
