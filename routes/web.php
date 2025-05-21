@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostContoller;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DeviceController;
 
 Route::get('/',[HomeController::class,'homepage'])->name('homepage');
 Route::get('/contact_us',[HomeController::class,'contact_us'])->name('contact_us');
@@ -19,6 +20,13 @@ route::put('/userlist/{user}/update', [AdminController::class, 'update'])->name(
 route::delete('/userlist/{user}/destroy', [AdminController::class, 'destroy'])->name('user.destroy');
 route::get('/add_user', [AdminController::class, 'add_user'])->name('add_user');
 route::post('/add_user/create', [AdminController::class, 'create'])->name('add_user/create');
+
+route::get('/userlist/{user}/view', [AdminController::class, 'view'])->name('user.view');
+
+//route::get('/userlist/view/device', [AdminController::class, 'device_page'])->name('device');
+//route::post('/userlist/{user}/view/device/assign_device', [AdminController::class, 'assign'])->name('assign_device');
+route::get('/device', [DeviceController::class, 'index'])->name('device');
+route::post('/device/create', [DeviceController::class, 'assign'])->name('device.assign');
 
 route::get('/post', [PostContoller::class, 'index']);
 route::post('/create', [PostContoller::class, 'create'])->name('create');

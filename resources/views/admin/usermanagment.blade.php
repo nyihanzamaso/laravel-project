@@ -158,6 +158,7 @@
 
   </style>
 </head>
+<x-app-layout>
 <body>
   <div class="dashboard">
     <!-- Sidebar -->
@@ -224,7 +225,7 @@
                 <td>{{$user->usertype}}</td>
                 <td>{{$user->created_at}}</td>
                 <td>
-                  <span class="icon">👁</span>
+                  <a href="{{route('user.view', ['user' => $user])}}"><span class="icon">👁</span></a>
                   <a href="{{route('user.edit', ['user'=> $user])}}"><span class="icon">✏️</span></a>
                   <span class="icon">
                     <form method="post", action="{{route('user.destroy',['user' => $user])}}">
@@ -242,5 +243,6 @@
       </section>
     </main>
   </div>
+  </x-app-layout>
 </body>
 </html>

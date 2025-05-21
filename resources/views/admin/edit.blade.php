@@ -25,6 +25,10 @@
                 <x-label for="name" value="{{ __('Phone') }}" />
                 <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" value="{{$user->phone}}" required autofocus autocomplete="phone" />
             </div>
+            <div>
+                <x-label for="name" value="{{ __('Usertype') }}" />
+                <x-input id="phone" class="block mt-1 w-full" type="text" name="usertype" value="{{$user->usertype}}" required autofocus autocomplete="usertype" />
+            </div>
 
 
 

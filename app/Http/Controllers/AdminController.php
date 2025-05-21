@@ -40,6 +40,7 @@ class AdminController extends Controller
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
+            'usertype'=>'required',
         ]);
         $user->update($data);
 
@@ -61,6 +62,25 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
         $user = User::create($data);
+
+        return redirect(route('userlist'));
+    }
+    public function view(User $user){
+        return view('admin.view_user');
+    }
+        public function device_page(){
+        return view('device.assign_new_device');
+    }
+    public function assign(Request $request){
+            $data = $request->validate([
+            'location' => 'required',
+            'status' => 'required',
+            'owner' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'industry' => 'required',
+        ]);
+        $device = Device::create($data);
 
         return redirect(route('userlist'));
     }
