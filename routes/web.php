@@ -25,8 +25,8 @@ route::get('/userlist/{user}/view', [AdminController::class, 'view'])->name('use
 
 //route::get('/userlist/view/device', [AdminController::class, 'device_page'])->name('device');
 //route::post('/userlist/{user}/view/device/assign_device', [AdminController::class, 'assign'])->name('assign_device');
-route::get('/device', [DeviceController::class, 'index'])->name('device');
-route::post('/device/create', [DeviceController::class, 'assign'])->name('device.assign');
+route::get('/device/{user}', [DeviceController::class, 'index'])->name('device');
+route::post('/device/{user}/create', [DeviceController::class, 'assign'])->name('device.assign');
 
 route::get('/post', [PostContoller::class, 'index']);
 route::post('/create', [PostContoller::class, 'create'])->name('create');

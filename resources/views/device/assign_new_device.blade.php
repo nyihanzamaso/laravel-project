@@ -111,7 +111,7 @@ body {
     </div>
 
     <!-- Form -->
-    <form class="device-form" method="POST" action="{{route('device.assign')}}">
+    <form class="device-form" method="POST" action="{{route('device.assign',['user'=>$user->id])}}">
         @csrf
         @method('post')
       <h2>NEW DEVICE</h2>
@@ -122,15 +122,15 @@ body {
             </div>
       <div>
                 <x-label for="owner" value="{{ __('Owner') }}" />
-                <x-input id="owner" class="block mt-1 w-full" type="text" name="owner" :value="old('owner')" required autofocus autocomplete="owner" />
+                <x-input id="owner" class="block mt-1 w-full" type="text" name="owner" :value="old('owner')" required autofocus autocomplete="owner" value="{{$user->name}}" />
             </div>
       <div>
                 <x-label for="phone" value="{{ __('Phone') }}" />
-                <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
+                <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autofocus autocomplete="phone" value="{{$user->phone}}" />
             </div>
       <div>
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="text" name="email" :value="old('email')" required autofocus autocomplete="email" />
+                <x-input id="email" class="block mt-1 w-full" type="text" name="email" :value="old('email')" required autofocus autocomplete="email" value="{{$user->email}}" />
             </div>
       <div>
                 <x-label for="industry" value="{{ __('Industry') }}" />

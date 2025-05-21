@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 
 class DeviceController extends Controller
 {
-    public function index(){
-        return view('device.assign_new_device');
+    public function index(User $user){
+        return view('device.assign_new_device',['user'=>$user]);
     }
-    public function assign(Request $request){
+    public function assign(Request $request, User $user){
         $data =$request->validate([
             'location'=>'required',
             'owner'=>'required',

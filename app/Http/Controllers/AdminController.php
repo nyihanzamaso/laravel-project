@@ -66,7 +66,7 @@ class AdminController extends Controller
         return redirect(route('userlist'));
     }
     public function view(User $user){
-        return view('admin.view_user');
+        return view('admin.view_user',['user'=>$user]);
     }
         public function device_page(){
         return view('device.assign_new_device');

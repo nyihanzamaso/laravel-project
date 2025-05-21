@@ -209,7 +209,7 @@
         <div class="user-controls">
           <span class="icon">🔔</span>
           <span class="icon">🌙</span>
-          <a href="{{route('device')}}" ><button class="save">Assign Device</button></a>
+          <a href="{{route('device',['user'=>$user])}}" ><button class="save">Assign Device</button></a>
         </div>
       </header>
 
