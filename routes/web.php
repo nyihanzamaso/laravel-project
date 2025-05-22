@@ -23,10 +23,11 @@ route::post('/add_user/create', [AdminController::class, 'create'])->name('add_u
 
 route::get('/userlist/{user}/view', [AdminController::class, 'view'])->name('user.view');
 
-//route::get('/userlist/view/device', [AdminController::class, 'device_page'])->name('device');
-//route::post('/userlist/{user}/view/device/assign_device', [AdminController::class, 'assign'])->name('assign_device');
+
 route::get('/device/{user}', [DeviceController::class, 'index'])->name('device');
 route::post('/device/{user}/create', [DeviceController::class, 'assign'])->name('device.assign');
 
-route::get('/post', [PostContoller::class, 'index']);
-route::post('/create', [PostContoller::class, 'create'])->name('create');
+route::get('/device_list', [DeviceController::class, 'view_device_list'])->name('view_device_list');
+
+//route::get('/post', [PostContoller::class, 'index']);
+//route::post('/create', [PostContoller::class, 'create'])->name('create');

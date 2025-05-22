@@ -27,4 +27,8 @@ class DeviceController extends Controller
 
         return redirect(route('userlist'));
     }
+    public function view_device_list(){
+        $device = Device::all();
+        return view('device.device_manager',['device'=>$device]);
+    }
 }

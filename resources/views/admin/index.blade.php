@@ -171,7 +171,7 @@
         <ul>
           <li class="active">Dashboard</li>
           <li>Air Quality</li>
-          <a href="{{route('devices')}}"><li>Device Status</li></a>
+          <a href="{{route('view_device_list')}}"><li>Device Status</li></a>
           <a href="{{route('userlist')}}"><li>User</li></a>
           <li>Analytics</li>
           <li>Alerts</li>
