@@ -191,7 +191,7 @@
       <p class="slogan">Transforming Carbon into Cleaner Air</p>
       <nav>
         <ul>
-          <li class="active">Dashboard</li>
+          <a href="{{route('home')}}"><li class="active">Dashboard</li></a>
           <li>Air Quality</li>
           <li>Stations</li>
           <li>Alerts</li>

@@ -14,7 +14,6 @@ Route::get('/about_us',[HomeController::class,'about_us'])->name('about_us');
 
 route::get('/home', [AdminController::class, 'index'])->name('home');
 route::get('/userlist', [AdminController::class, 'userlist'])->name('userlist');
-route::get('/devices', [AdminController::class, 'device'])->name('devices');
 route::get('/userlist/{user}/edit', [AdminController::class, 'edit'])->name('user.edit');
 route::put('/userlist/{user}/update', [AdminController::class, 'update'])->name('user.update');
 route::delete('/userlist/{user}/destroy', [AdminController::class, 'destroy'])->name('user.destroy');
@@ -28,6 +27,8 @@ route::get('/device/{user}', [DeviceController::class, 'index'])->name('device')
 route::post('/device/{user}/create', [DeviceController::class, 'assign'])->name('device.assign');
 
 route::get('/device_list', [DeviceController::class, 'view_device_list'])->name('view_device_list');
+route::get('/device_list/{device}/edit', [DeviceController::class, 'edit'])->name('device.edit');
+route::put('/device_list/{device}/update', [DeviceController::class, 'update'])->name('device.update');
 
 //route::get('/post', [PostContoller::class, 'index']);
 //route::post('/create', [PostContoller::class, 'create'])->name('create');

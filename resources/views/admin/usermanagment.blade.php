@@ -169,7 +169,7 @@
         <ul>
         <a href="{{route('home')}}"><li>Dashboard</li></a>
           <li>Air Quality</li>
-          <a href="{{route('devices')}}"><li>Device Status</li></a>
+          <a href="{{route('view_device_list')}}"><li>Device Status</li></a>
           <li class="active">User</li>
           <li>Analytics</li>
           <li>Alerts</li>

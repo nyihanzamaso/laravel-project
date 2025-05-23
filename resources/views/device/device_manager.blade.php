@@ -152,10 +152,10 @@ tbody td {
       <p class="slogan">Transforming Carbon into Cleaner Air</p>
       <nav>
         <ul>
-          <li>Dashboard</li>
+          <a href="{{route('home')}}"><li>Dashboard</li></a>
           <li>Air Quality</li>
           <li class="active">Device Status</li>
-          <li>User</li>
+          <a href="{{route('userlist')}}"><li>User</li></a>
           <li>Analytics</li>
           <li>Alerts</li>
           <li>Calendar</li>
@@ -198,7 +198,7 @@ tbody td {
               <td>{{$device->industry}}</td>
               <td>{{$device->created_at}}</td>
               <td>
-                <span class="action">✏️</span>
+                <a href="{{route('device.edit',['device'=>$device->id])}}"><span class="action">✏️</span></a>
                 <span class="action">👁️</span>
                 <span class="action delete">🗑️</span>
               </td>
