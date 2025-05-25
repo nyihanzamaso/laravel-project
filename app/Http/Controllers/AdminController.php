@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function index(Device $device, User $user){
+        $device_count = Device::count();
+        $count_users = User::count();
         if(Auth::id()){
             $usertype = Auth()->user()->usertype;
             $name = Auth()->user()->name;
@@ -21,7 +23,7 @@ class AdminController extends Controller
                 return view('user.user_dashboard',['device'=>$device, 'name'=>$name]);
             }
             if ($usertype == 'admin'){
-                return view('admin.index');
+                return view('admin.index',['device_count'=>$device_count, 'count_users'=>$count_users]);
             }
             else{
                 return redirect()->back();

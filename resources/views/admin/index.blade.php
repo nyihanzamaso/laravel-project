@@ -192,11 +192,11 @@
           <span class="icon">🌙</span>
         </div>
       </header>
-
+  
       <!-- Stats -->
       <section class="stats">
-        <div class="card">75<br /><small>Total Devices</small></div>
-        <div class="card">357<br /><small>Total Users</small></div>
+        <div class="card">{{$device_count}}<br /><small>Total Devices</small></div>
+        <div class="card">{{$count_users}}<br /><small>Total Users</small></div>
         <div class="card">65<br /><small>Total Polluted</small></div>
         <div class="card">128<br /><small>Total ReAir</small></div>
       </section>
