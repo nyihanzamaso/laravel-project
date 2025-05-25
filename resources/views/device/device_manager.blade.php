@@ -200,8 +200,11 @@ tbody td {
               <td>
                 <a href="{{route('device.edit',['device'=>$device->id])}}"><span class="action">✏️</span></a>
                 <span class="action">👁️</span>
-                <span class="action delete">🗑️</span>
-              </td>
+                <form method="post" action="{{route('device.delete', ['device'=>$device->id])}}"><span class="action delete"></span>
+                @csrf
+                @method('delete')
+                <input type="submit" value="🗑️">
+              </td></form>
             </tr>
             @endforeach
           </tbody>

@@ -47,4 +47,8 @@ class DeviceController extends Controller
 
         return redirect(route('view_device_list'));
     }
+    public function destroy(Device $device){
+        $device -> delete();
+        return redirect(route('view_device_list'));
+    }
 }
