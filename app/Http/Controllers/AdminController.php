@@ -5,16 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Device;
 
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function index(Device $device, User $user){
         if(Auth::id()){
             $usertype = Auth()->user()->usertype;
+            $name = Auth()->user()->name;
             if ($usertype == 'user'){
-                return view('user.user_dashboard');
+                $user = User::all();
+                $device = Device::all();
+                return view('user.user_dashboard',['device'=>$device, 'name'=>$name]);
             }
             if ($usertype == 'admin'){
                 return view('admin.index');

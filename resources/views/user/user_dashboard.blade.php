@@ -209,27 +209,33 @@
         <div class="user-controls">
           <span class="icon">🔔</span>
           <span class="icon">🌙</span>
-          <span class="user">Pascal</span>
         </div>
       </header>
-
-      <!-- Metrics -->
+      @php
+      $count = collect($device)->where('owner', $name)->count();
+      @endphp
+            <!-- Metrics -->
       <section class="stats">
-        <div class="card">3<br /><small>Stations</small></div>
+        <div class="card">{{$count}}<br /><small>Stations</small></div>
         <div class="card">70%<br /><small>Average Air Purified</small></div>
         <div class="card">2<br /><small>Trash Area</small></div>
         <div class="card">7<br /><small>Batch Purification</small></div>
       </section>
-
+      
+      @foreach($device as $device)
+      
+      
+      @if(($device && $device->owner == $name))
+      
       <!-- Charts -->
       <section class="charts">
         <div class="chart-box">
           <h3>Pie Chart</h3>
           <div class="pies">
-            <div class="pie">81%<br /><small>Station A</small></div>
-            <div class="pie">22%<br /><small>Station B</small></div>
-            <div class="pie">62%<br /><small>Station C</small></div>
+            <div class="pie">81%<br /><small>{{$device->location}}</small></div>
           </div>
+          @endif
+      @endforeach
         </div>
         <div class="chart-box">
           <h3>ReAir Analysis</h3>

@@ -30,5 +30,8 @@ route::get('/device_list', [DeviceController::class, 'view_device_list'])->name(
 route::get('/device_list/{device}/edit', [DeviceController::class, 'edit'])->name('device.edit');
 route::put('/device_list/{device}/update', [DeviceController::class, 'update'])->name('device.update');
 
+route::get('/user_dashboard', [UserController::class, 'view'])->name('view_device_list');
+
+
 //route::get('/post', [PostContoller::class, 'index']);
 //route::post('/create', [PostContoller::class, 'create'])->name('create');
